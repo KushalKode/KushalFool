@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kushal </title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to right,#141e30,#243b55);
+      color:white;
+      min-height:100vh;
+      padding:30px;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      background: rgba(255,255,255,0.08);
+      padding:25px;
+      border-radius:15px;
+      backdrop-filter: blur(8px);
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+      color:#ffd369;
+    }
+
+    textarea{
+      width:100%;
+      height:180px;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      resize:none;
+      font-size:16px;
+      margin-top:10px;
+      outline:none;
+    }
+
+    .buttons{
+      display:flex;
+      gap:15px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      padding:12px 20px;
+      border:none;
+      border-radius:8px;
+      background:#ffd369;
+      color:black;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+      background:white;
+    }
+
+    .output{
+      margin-top:25px;
+      background:white;
+      color:black;
+      padding:20px;
+      border-radius:10px;
+      min-height:100px;
+      line-height:1.8;
+    }
+
+    .comment-section{
+      margin-top:40px;
+    }
+
+    .comment-section h2{
+      margin-bottom:15px;
+      color:#ffd369;
+    }
+
+    .comment-input{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .comment-input input{
+      flex:1;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      outline:none;
+    }
+
+    .comments{
+      margin-top:20px;
+    }
+
+    .comment{
+      background:white;
+      color:black;
+      padding:15px;
+      border-radius:10px;
+      margin-bottom:10px;
+    }
+
+    .question{
+      margin-bottom:15px;
+      font-size:18px;
+      color:#fff;
+    }
+
+    @media(max-width:600px){
+      .comment-input{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>I am very Nervous.</h1>
+
+    <label>Hello YE WEBSITE MENE BANAYA HA PLZZ 🥹:</label>
+
+    <textarea id="bioInput" placeholder="Write about yourself here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="translateHindi()">Translate to Hindi</button>
+      <button onclick="translateHinglish()">Translate to Hinglish</button>
+      <button onclick="showOriginal()">Original</button>
+    </div>
+
+    <div class="output" id="outputBox">
+      PLzzz Click on TRANSLATE TO HINGLISH / HINDI...
+    </div>
+
+    <div class="comment-section">
+
+      <div class="question">
+        ❓ Only like a friend because STUDY is Important ......
+      </div>
+
+      <div class="comment-input">
+        <input type="text" id="commentInput" placeholder="Write your comment..." />
+        <button onclick="addComment()">Post Comment</button>
+      </div>
+
+      <div class="comments" id="commentsBox"></div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let originalText = "";
+
+    function translateHindi() {
+
+      originalText = document.getElementById("bioInput").value;
+
+      let hindiText =
+       ```html
+
+"नमस्ते, मेरा नाम कुशल है। शायद आपको यह मैसेज थोड़ा अजीब या अचानक लगे, और सच कहूं तो मुझे भी समझ नहीं आ रहा कि मैं यह सब कैसे लिखूं 😅 मैं आमतौर पर किसी अनजान लड़की से बात नहीं करता, इसलिए थोड़ा नर्वस हूं। मैं रोज़ 7:30 बजे निकलता हूं, और शायद हम दोनों का समय भी लगभग एक जैसा होता है। कई बार लगा कि आपसे बात करूं, लेकिन कभी हिम्मत नहीं हो पाई। बस इतना कहना था कि अगर आप सहज हों, तो क्या हम बात कर सकते हैं? सिर्फ एक दोस्त की तरह 😊
+कृपया कुछ गलत मत समझिएगा, मेरा इरादा सिर्फ सामान्य दोस्ती और बात करने का है। सच बताऊं तो मैंने अपनी स्कूल लाइफ में कभी किसी लड़की से ठीक से बात नहीं की, और आज पहली बार हिम्मत करके यह मैसेज लिख रहा हूं। मैं आपको परेशान नहीं करना चाहता, बस सम्मान के साथ दोस्ती का हाथ बढ़ाना चाहता हूं। अगर आपको ठीक लगे तभी जवाब दीजिएगा। और अगर आप बात नहीं करना चाहतीं, तो आप साफ मना भी कर सकती हैं — मैं आपके फैसले की पूरी इज़्ज़त करूंगा।
+धन्यवाद, आपने मेरा मैसेज/वेबसाइट देखा 😊  
+नीचे कमेंट जरूर करें प्लीज़....";
+```
+
+
+      document.getElementById("outputBox").innerHTML = hindiText;
+    }
+
+    function translateHinglish() {
+
+      originalText = document.getElementById("bioInput").value;
+
+      let hinglishText =
+        "Namaste, mera naam Kushal hai. Shayad aapko ye message thoda unexpected lage, aur honestly mujhe bhi samajh nahi aa raha ki main ye sab kaise likhun 😅 Main normally kisi unknown ladki se baat nahi karta, isliye thoda nervous hoon. Main roz 7:30 baje nikalta hoon, aur shayad hum dono ka timing bhi almost same hota hai. Kai baar laga ki aapse baat karun, lekin kabhi meri himmat hi nahi ho pati. Bas itna kehna tha ki agar aap comfortable ho, to kya hum baat kar sakte hain? INSTAGRAM -@dhantara_live Sirf ek friend ki tarah 😊 Please kuch galat mat samajhna, mera intention bas normal friendship aur baat karne ka hai. (Sach bolun to maine apni school life me kabhi kisi ladki se baat nahi ki, aur aaj pehli baar himmat karke ye message likh raha hoon.) Main aapko disturb nahi karna chahta, bas respectfully dosti ka haath badhana chahta hoon. Agar aapko comfortable lage tabhi reply kariyega. Aur agar aap interested nahi hain, to aap clearly mana kar sakti hain — main aapke decision ki puri respect karunga. Thanks, aapne mera message/website dekha 😊NICHE COMMENT KARE PLZZ...";
+
+
+      document.getElementById("outputBox").innerHTML = hinglishText;
+    }
+
+    function showOriginal() {
+      document.getElementById("outputBox").innerHTML =
+        document.getElementById("bioInput").value;
+    }
+
+    function addComment() {
+
+      let commentInput = document.getElementById("commentInput");
+
+      let commentText = commentInput.value;
+
+      if(commentText.trim() === ""){
+        alert("Please write a comment");
+        return;
+      }
+
+      let commentDiv = document.createElement("div");
+
+      commentDiv.classList.add("comment");
+
+      commentDiv.innerHTML = `
+        <strong>User:</strong><br>
+        ${commentText}
+      `;
+
+      document.getElementById("commentsBox").prepend(commentDiv);
+
+      commentInput.value = "";
+    }
+  </script>
+
+</body>
+</html>
